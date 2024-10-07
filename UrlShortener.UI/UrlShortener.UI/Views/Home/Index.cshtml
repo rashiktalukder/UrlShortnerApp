@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (@ViewBag.ShortUrl !=null)
+{
+    <div class="alert alert-success">
+        <p>The Shortened url is: @ViewBag.ShortUrl</p>
+    </div>
+}
+
+<form asp-action="ShortenUrl" method="post">
+    <div class="row">
+        <div class="col-10">
+            <input type="text" name="OriginalUrl" placeholder="Enter URL" class="form-control" />
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-success form-control">Shorten</button>
+        </div>
+    </div>
+</form>
